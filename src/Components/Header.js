@@ -1,11 +1,3 @@
-let pageName = 'Concentration Game'
-
-let toolBarElements = [
-  {name: 'AbouUs', icon: null, action: ()=>{}},
-  {name: 'Instruction', icon: null, action: ()=>{}},
-  {name: 'Retry', icon: null, action: ()=>{}}
-]
-
 const logoRender = () => {
   const logo = document.createElement('div')
   logo.className = 'header-logo'
@@ -20,7 +12,7 @@ const toolBarRender = () => {
     const element = document.createElement('div')
     element.className = 'header-toolbar-element'
     element.textContent = toolBarElements[i].name
-    toolBar.appendChild(element)  /// 
+    toolBar.appendChild(element)  /// zmienić dane do renderowania na iconki narazie mi się nie chce szukać xD
   }
   return toolBar
 }
