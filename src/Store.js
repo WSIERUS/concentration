@@ -9,6 +9,8 @@ var toolBarElements = [
 const homeText = 'Wellcome in Concentration Game! Check instruction and start the game.'
 
 var homeButtons = [
-  {name: 'Intruction', action: () => {handleRouteToInstruction()}}, // handler w index
+  {name: 'Instruction', action: () => {handleRouteToInstruction()}}, // handler w index
   {name: 'Start', action: () => {handleRouteToGame()}} // handler w index
 ]
+
+const instructionText = 'Instruction'

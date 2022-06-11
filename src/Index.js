@@ -11,5 +11,9 @@ function handleRouteToGame() {
 }
 
 function handleRouteToInstruction() {
-  console.log('nic')
+  setTimeout(() => {
+    root.textContent = ''
+    root.appendChild(InstructionRender())
+  }, 1000)
+  
 }
