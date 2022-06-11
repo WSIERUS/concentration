@@ -2,7 +2,7 @@ class Button {
 
   constructor(name, classe, onClick, changeClass ) {
     this.name = name
-    this.classes = classe,
+    this.classe = classe,
     this.onClick = onClick
     this.changeClass = changeClass
     this.handleRender = this.handleCreate()
@@ -13,8 +13,8 @@ class Button {
     button.textContent = this.name
     button.className = this.classe
     button.addEventListener('click', this.onClick)
-    this.changeClass ? button.addEventListener('onMouseEnter', () => {button.className = this.changeClass}) : null
-    this.changeClass ? button.addEventListener('onMouseLeave', () => {button.className = this.classes}) : null
+    this.changeClass ? button.addEventListener('mouseenter', () => {button.className = this.changeClass}) : null
+    this.changeClass ? button.addEventListener('mouseleave', () => {button.className = this.classe}) : null
     return button
   }
 }

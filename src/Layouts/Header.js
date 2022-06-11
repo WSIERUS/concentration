@@ -5,22 +5,21 @@ const LogoRender = () => {
   return Logo
 }
 
-const ToolBarRender = () => {
+const NaviBarRender = () => { // Rendering NaviBar in right side Header
   const ToolBar = document.createElement('div')
   ToolBar.className = 'header-toolbar'
-  for(let i = 0; i <= 2; i++) { // Renderowanie przycisków pętlą FOR
-    const element = document.createElement('div')
-    element.className = 'header-toolbar-element'
-    element.textContent = toolBarElements[i].name
-    ToolBar.appendChild(element)  /// zmienić dane do renderowania na iconki narazie mi się nie chce szukać xD
+  for(let i = 0; i <= 2; i++) { // Buttons rendering by FOR loop
+    ToolBar.appendChild(
+      new Button(toolBarElements[i].name, 'header-toolbar-element', () => {console.log('dziala')}).handleRender
+    )  /// zmienić dane do renderowania na iconki narazie mi się nie chce szukać xD
   }
   return ToolBar
 }
 
-const HeaderRedner = () => {
+const HeaderRedner = () => { // Rendering Header
   const Header = document.createElement('div')
   Header.className = 'header'
   Header.appendChild(LogoRender())
-  Header.appendChild(ToolBarRender())
+  Header.appendChild(NaviBarRender())
   return Header
 }

@@ -2,24 +2,17 @@ const HomeRender = () => {
   const Home = document.createElement('div')
   Home.className = 'home'
 
-  const HomeDescription = document.createElement('div') // Opis Home
-  HomeDescription.textContent = homeText
-  HomeDescription.className = 'home-description'
-  Home.appendChild(HomeDescription)
+  Home.appendChild( // Description
+    new Description(homeText, 'home-description').handleRender
+  )
 
-  const HomeButtons = document.createElement('div') // list buttons
+  const HomeButtons = document.createElement('div') // buttons list
   HomeButtons.className = 'home-buttons'
 
-  homeButtons.map(button => { // Tak też potrafię :) - renderowanie przycisków metodą MAP
-    const element = document.createElement('button')
-    element.textContent = button.name
-    element.className = 'home-button'
-    element.addEventListener('click', button.action)
-    element.addEventListener('mouseenter', () => {element.className = 'home-button-moved'})
-    element.addEventListener('mouseleave', () => {element.className = 'home-button'})
-    HomeButtons.appendChild(element)
-
-    return element
+  homeButtons.map(button => { // Buttons rendering by MAP method
+    HomeButtons.appendChild(
+      new Button(button.name, 'home-button', button.action, 'home-button-moved').handleRender
+    )
   })
 
   Home.appendChild(HomeButtons)

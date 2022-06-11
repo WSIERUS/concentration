@@ -1,8 +1,8 @@
 const root = document.querySelector('#root')
 
-root.appendChild(HomeRender())
+root.appendChild(HomeRender()) // Standard rendering JS Aplication
 
-function handleRouteToGame() {
+function handleRouteToGame() { // Route to Game Aplication
   setTimeout(() => {
     root.textContent = ''
     root.appendChild(HeaderRedner())
@@ -10,7 +10,7 @@ function handleRouteToGame() {
   }, 1000)
 }
 
-function handleRouteToInstruction() {
+function handleRouteToInstruction() { // Route to Instruction
   setTimeout(() => {
     root.textContent = ''
     root.appendChild(InstructionRender())
