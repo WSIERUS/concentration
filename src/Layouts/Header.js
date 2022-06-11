@@ -6,14 +6,14 @@ const LogoRender = () => {
 }
 
 const NaviBarRender = () => { // Rendering NaviBar in right side Header
-  const ToolBar = document.createElement('div')
-  ToolBar.className = 'header-toolbar'
+  const NaviBar = document.createElement('div')
+  NaviBar.className = 'header-toolbar'
   for(let i = 0; i <= 2; i++) { // Buttons rendering by FOR loop
-    ToolBar.appendChild(
-      new Button(toolBarElements[i].name, 'header-toolbar-element', () => {console.log('dziala')}).handleRender
+    NaviBar.appendChild(
+      new Button(naviBarElementsArray[i].name, 'header-navibar-element', naviBarElementsArray[i].action).handleRender
     )  /// zmienić dane do renderowania na iconki narazie mi się nie chce szukać xD
   }
-  return ToolBar
+  return NaviBar
 }
 
 const HeaderRedner = () => { // Rendering Header
