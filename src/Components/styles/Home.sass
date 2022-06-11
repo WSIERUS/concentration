@@ -1,0 +1,39 @@
+.home
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.home-description
+  font-family: 'Poppins', sans-serif
+  font-size: 18px
+  color: rgba(0, 12, 116, 1)
+
+.home-buttons
+  display: flex
+  flex-direction: row
+
+%Default-Home-Button
+  width: 20vw
+  margin: 20px
+  border: 1px solid
+  border-color: rgba(0, 12, 116, 1)
+  font-family: 'Poppins', sans-serif
+  font-size: 18px
+  font-weight: bold
+  cursor: pointer
+  transition-property: background-color, color
+  transition-duration: 0.5s
+
+.home-button
+  @extend %Default-Home-Button
+  color: rgba(0, 12, 116, 1)
+  background-color: rgba(255, 255, 255, 1)
+
+.home-button-moved
+  @extend %Default-Home-Button
+  color: rgba(255, 255, 255, 1)
+  background-color: rgba(0, 12, 116, 1)

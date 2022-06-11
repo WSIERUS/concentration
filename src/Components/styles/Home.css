@@ -1,0 +1,60 @@
+.home {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #000c74;
+}
+
+.home-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.home-button, .home-button-moved {
+  width: 20vw;
+  margin: 20px;
+  border: 1px solid;
+  border-color: #000c74;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.home-button {
+  color: #000c74;
+  background-color: white;
+}
+
+.home-button-moved {
+  color: white;
+  background-color: #000c74;
+}
+/*# sourceMappingURL=Home.css.map */
