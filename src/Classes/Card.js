@@ -23,9 +23,9 @@ class Card {
     element.style.backgroundImage = `url(${defaultImage})`
     element.setAttribute('alt', 'image')
     element.className = classe
-    element.addEventListener('click', () => this.onClick(this.id, this.image, this.clicked))
-    element.addEventListener('mouseenter', element.className = this.classeChanged)
-    element.addEventListener('mouseleave', element.className = this.classe)
+    element.addEventListener('click', () => this.onClick(this.id, this.image, this.clicked, this))
+    element.addEventListener('mouseenter', () => {element.className = this.classeChanged})
+    element.addEventListener('mouseleave', () => {element.className = this.classe})
   }
 
 }
