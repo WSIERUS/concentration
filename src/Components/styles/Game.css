@@ -1,0 +1,39 @@
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-row-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.game-card, .game-card-moved {
+  width: 100px;
+  height: 150px;
+  border: 2px solid;
+  border-radius: 10px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.game-card {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.game-card-moved {
+  border-color: #000f74;
+}
+/*# sourceMappingURL=Game.css.map */

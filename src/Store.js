@@ -15,13 +15,21 @@ var homeButtonsArray = [
 
 const instructionText = 'Instruction'
 
-var CardsArray = [
-  {idImage: 1, image:'/Images/apple.png'},
-  {idImage: 2, image:'/Images/pear.png'},
-  {idImage: 3, image:'/Images/orange.png'},
-  {idImage: 4, image:'/Images/peach.png'},
-  {idImage: 5, image:'/Images/strawberry.png'},
-  {idImage: 6, image:'/Images/banana.png'},
-  {idImage: 7, image:'/Images/rasberry.png'},
-  {idImage: 8, image:'/Images/blackberry.png'},
+var Cards = [
+  {id:0, idImage: 1, image:'/src/Images/apple.png', clicked:false, able: true},
+  {id:1, idImage: 2, image:'/src/Images/pear.png', clicked:false, able: true},
+  {id:2, idImage: 3, image:'/src/Images/orange.png', clicked:false, able: true},
+  {id:3, idImage: 4, image:'/src/Images/peach.png', clicked:false, able: true},
+  {id:4, idImage: 5, image:'/src/Images/strawberry.png', clicked:false, able: true},
+  {id:5, idImage: 6, image:'/src/Images/banana.png', clicked:false, able: true},
+  {id:6, idImage: 7, image:'/src/Images/rasberry.png', clicked:false, able: true},
+  {id:7, idImage: 8, image:'/src/Images/blackberry.png', clicked:false, able: true},
+  {id:8, idImage: 1, image:'/src/Images/apple.png', clicked:false, able: true},
+  {id:9, idImage: 2, image:'/src/Images/pear.png', clicked:false, able: true},
+  {id:10, idImage: 3, image:'/src/Images/orange.png', clicked:false, able: true},
+  {id:11, idImage: 4, image:'/src/Images/peach.png', clicked:false, able: true},
+  {id:12, idImage: 5, image:'/src/Images/strawberry.png', clicked:false, able: true},
+  {id:13, idImage: 6, image:'/src/Images/banana.png', clicked:false, able: true},
+  {id:14, idImage: 7, image:'/src/Images/rasberry.png', clicked:false, able: true},
+  {id:15, idImage: 8, image:'/src/Images/blackberry.png', clicked:false, able: true},
 ]

@@ -1,0 +1,25 @@
+.game
+  display: flex
+  flex-direction: column
+
+.game-row-cards
+  display: flex
+  flex-direction: row
+
+%Default-Card
+  width: 100px
+  height: 150px
+  border: 2px solid
+  border-radius: 10px
+  background-position: center
+  background-size: contain
+  background-repeat: no-repeat
+  cursor: pointer
+
+.game-card
+  @extend %Default-Card
+  border-color: rgba(0, 0, 0, 0)
+
+.game-card-moved
+  @extend %Default-Card
+  border-color: rgba(0, 15, 116, 1)
