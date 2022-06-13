@@ -8,15 +8,13 @@ let defaultImage = "/src/Images/default.png"
 
 class Card {
 
-  constructor(id, imageId, image, classe, onClick, classeChanged, clicked, able) {
+  constructor(id, idImage, image, classe, onClick, classeChanged) {
     this.id = id,
-    this.imageId = imageId
+    this.idImage = idImage
     this.image = image,
     this.classe = classe,
     this.onClick = onClick,
     this.classeChanged = classeChanged
-    this.clicked = clicked
-    this.able = able
     this.handleRender = this.handleCreate()
   }
 
@@ -25,7 +23,7 @@ class Card {
     element.setAttribute('id', this.id)
     element.setAttribute('alt', 'image')
     element.className = this.classe
-    element.src = this.clicked ? this.image : defaultImage
+    element.src = defaultImage
     element.addEventListener('click', () => gameCheckCard(this, element))
     element.addEventListener('mouseenter', () => {element.className = this.classeChanged})
     element.addEventListener('mouseleave', () => {element.className = this.classe})

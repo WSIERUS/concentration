@@ -14,8 +14,6 @@ const gameStart = () => { // Start New Game
   gameCardArrayCreate()
 }
 
-
-
 const gameCardArrayRender = () => { // Render Cards in Row - Always 4 or less in single row
   let index = 0
   CardsArray.map(card => {
@@ -50,22 +48,26 @@ const gameRender = () => { // Render Game Front-End
 }
 
 gameCheckCard = (card, element) => {
-  console.log(card, element)
-  console.log(firstCheckedCard, secondCheckedCard)
-  if(!card.clicked && card.able) {
-    if(firstCheckedCard == false) {
-      card.clicked = true
-      element.src = card.image
+  // console.log(firstCheckedCard, secondCheckedCard)
+  let indexCard = CardsArray.findIndex(ele => card.id === ele.id)
+    if(firstCheckedCard == false && CardsArray[indexCard].clicked === false) {
+
+      element.src = CardsArray[indexCard].image
+
+      CardsArray[indexCard].clicked = true
+
       firstCheckedCard = card
     }
-    else if(secondCheckedCard == false) {
-      card.clicked = true
-      element.src = card.image
+    else if(secondCheckedCard == false && CardsArray[indexCard].clicked === false) {
+
+      element.src = CardsArray[indexCard].image
+
+      CardsArray[indexCard].clicked = true
+
       secondCheckedCard = card
+
       gamePairCheckResult()
     }
-  }
-  else return null
 }
 
 function winPair(first, second) {
@@ -86,24 +88,22 @@ function winPair(first, second) {
 }
 
 function losePair(first, second) {
-  CardsArray[CardsArray.findIndex(card => card.id === first.id)] = {
-    id: first.id,
-    idImage: first.idImage,
-    image: defaultImage,
-    clicked: false,
-    able: true
-  }
-  CardsArray[CardsArray.findIndex(card => card.id === second.id)] = {
-    id: second.id,
-    idImage: second.idImage,
-    image: defaultImage,
-    clicked: false,
-    able: true
-  }
+
+  let indexCardFirst = CardsArray.findIndex(card => card.id === first.id) 
+  let indexCardSecond = CardsArray.findIndex(card => card.id === second.id)
+
+  setTimeout(() => {
+    CardsArray[indexCardFirst].clicked = false
+    CardsArray[indexCardSecond].clicked = false
+  
+    document.getElementById(first.id).src = defaultImage
+    document.getElementById(second.id).src = defaultImage
+  }, 2000)
+
 }
 
 gamePairCheckResult = () => { ///
-  if(firstCheckedCard.imageId === secondCheckedCard.imageId) {
+  if(firstCheckedCard.idImage === secondCheckedCard.idImage) {
     winPair(firstCheckedCard, secondCheckedCard)
   }
   else {
@@ -111,8 +111,6 @@ gamePairCheckResult = () => { ///
   }
   firstCheckedCard = ''
   secondCheckedCard = ''
-  document.querySelector('.game').textContent = ''
-  gameRender()
 }
 
 gameStart()
