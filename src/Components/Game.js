@@ -37,7 +37,6 @@ informationRender = (game) => {
   const information = document.createElement('section')
   information.className = 'game-information'
   game.appendChild(information)
-
 }
 
 gameRender = () => { // Render Game Front-End
@@ -54,7 +53,7 @@ gameRender = () => { // Render Game Front-End
     }
   } 
 
-  counterRender(game)
+  informationRender(game)
   gameRowRender()
   gameCardArrayRender()
   
