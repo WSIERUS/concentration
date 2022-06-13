@@ -25,8 +25,9 @@ class Card {
     element.className = this.classe
     element.src = defaultImage
     element.addEventListener('click', () => gameCheckCard(this, element))
-    element.addEventListener('mouseenter', () => {element.className = this.classeChanged})
-    element.addEventListener('mouseleave', () => {element.className = this.classe})
+    const changeClass = (element, classe) => element.className = classe
+    element.addEventListener('mouseenter', () => changeClass(element, this.classeChanged))
+    element.addEventListener('mouseleave', () => changeClass(element, this.classe))
     return element
   }
 

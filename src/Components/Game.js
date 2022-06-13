@@ -3,7 +3,9 @@ let CardsArray = []
 let firstCheckedCard = ''
 let secondCheckedCard = ''
 
-const gameStart = () => { // Start New Game
+let trialCounter = 0
+
+gameStart = () => { // Start New Game
   CardsArray = []
   gameCardArrayCreate = () => {
     Cards.map(card => {
@@ -14,7 +16,7 @@ const gameStart = () => { // Start New Game
   gameCardArrayCreate()
 }
 
-const gameCardArrayRender = () => { // Render Cards in Row - Always 4 or less in single row
+gameCardArrayRender = () => { // Render Cards in Row - Always 4 or less in single row
   let index = 0
   CardsArray.map(card => {
     setTimeout(() => {
@@ -27,7 +29,18 @@ const gameCardArrayRender = () => { // Render Cards in Row - Always 4 or less in
   })
 }
 
-const gameRender = () => { // Render Game Front-End
+countersRender = () => {
+  
+}
+
+informationRender = (game) => {
+  const information = document.createElement('section')
+  information.className = 'game-information'
+  game.appendChild(information)
+
+}
+
+gameRender = () => { // Render Game Front-End
 
   const game = document.createElement('div')
   game.className = 'game'
@@ -41,50 +54,60 @@ const gameRender = () => { // Render Game Front-End
     }
   } 
 
+  counterRender(game)
   gameRowRender()
   gameCardArrayRender()
+  
 
   return game
 }
 
+updateCounter = () => {
+  document.querySelector('.counter').textContent = 'Ilość prób: ' + trialCounter
+}
+
 gameCheckCard = (card, element) => {
-  // console.log(firstCheckedCard, secondCheckedCard)
+
   let indexCard = CardsArray.findIndex(ele => card.id === ele.id)
-    if(firstCheckedCard == false && CardsArray[indexCard].clicked === false) {
 
-      element.src = CardsArray[indexCard].image
+  if(firstCheckedCard == false && CardsArray[indexCard].clicked === false && CardsArray[indexCard].able === true) {
+    element.src = CardsArray[indexCard].image
 
-      CardsArray[indexCard].clicked = true
+    CardsArray[indexCard].clicked = true
 
-      firstCheckedCard = card
-    }
-    else if(secondCheckedCard == false && CardsArray[indexCard].clicked === false) {
+    firstCheckedCard = card
+  }
+  else if(secondCheckedCard == false && CardsArray[indexCard].clicked === false && CardsArray[indexCard].able === true) {
+    element.src = CardsArray[indexCard].image
 
-      element.src = CardsArray[indexCard].image
+    CardsArray[indexCard].clicked = true
 
-      CardsArray[indexCard].clicked = true
+    secondCheckedCard = card
 
-      secondCheckedCard = card
-
-      gamePairCheckResult()
-    }
+    gamePairCheckResult()
+  }
 }
 
 function winPair(first, second) {
-  CardsArray[CardsArray.findIndex(card => card.id === first.id)] = {
-    id: first.id,
-    idImage: first.idImage,
-    image: first.image,
-    clicked: false,
-    able: false
+
+  firstCheckedCard = ''
+  secondCheckedCard = ''
+
+  let indexCardFirst = CardsArray.findIndex(card => card.id === first.id) 
+  let indexCardSecond = CardsArray.findIndex(card => card.id === second.id)
+
+  function handleBlockCard(index, id) {
+    CardsArray[index].clicked = false
+    CardsArray[index].able = false
+    let element = document.getElementById(id.id)
+    element.style.opacity = 0.5
+    element.style.borderColor = 'rgba(0,0,0,0)'
+    element.style.cursor = 'default'
   }
-  CardsArray[CardsArray.findIndex(card => card.id === second.id)] = {
-    id: second.id,
-    idImage: second.idImage,
-    image: second.image,
-    clicked: false,
-    able: false
-  }
+
+  handleBlockCard(indexCardFirst, first)
+  handleBlockCard(indexCardSecond, second)
+
 }
 
 function losePair(first, second) {
@@ -93,24 +116,37 @@ function losePair(first, second) {
   let indexCardSecond = CardsArray.findIndex(card => card.id === second.id)
 
   setTimeout(() => {
+    firstCheckedCard = ''
+    secondCheckedCard = ''
+
     CardsArray[indexCardFirst].clicked = false
     CardsArray[indexCardSecond].clicked = false
   
     document.getElementById(first.id).src = defaultImage
     document.getElementById(second.id).src = defaultImage
-  }, 2000)
-
+  }, 1000)
 }
 
-gamePairCheckResult = () => { ///
+function checkWin() {
+  if(CardsArray.filter(card => card.able === true).length === 0) {
+    alert("Gratulacje zwycięstwo") // zmienić na jakiś napis do góry zamiast licznika
+  }
+}
+
+gamePairCheckResult = () => { // 
   if(firstCheckedCard.idImage === secondCheckedCard.idImage) {
     winPair(firstCheckedCard, secondCheckedCard)
   }
   else {
     losePair(firstCheckedCard, secondCheckedCard)
   }
-  firstCheckedCard = ''
-  secondCheckedCard = ''
+  trialCounter++
+  updateCounter()
+  checkWin()
 }
 
 gameStart()
+
+restartGame = () => {
+  
+}
