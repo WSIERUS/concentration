@@ -7,7 +7,7 @@ const InstructionRender = () => {
   )
 
   Instruction.appendChild(
-    new Button('elo', 'klasa', () => handleRouteToGame()).handleRender
+    new Button('elo', null, 'klasa', () => handleRouteToGame()).handleRender
   )
 
   return Instruction

@@ -2,20 +2,20 @@ const pageName = 'Concentration Game'
 
 var naviBarElementsArray = [
   {name: 'AbouUs', icon: null, action: () => {handleRouteToAbouUs()}}, // handler in index
-  {name: 'Instruction', icon: '/src/Icons/instruction.png', action: () => {handleRouteToInstruction()}}, // handler in index
+  {name: 'Instruction', icon: '/src/Icons/instruction.png', action: () => {handleOpenInstruction()}}, // handler in index
   {name: 'Retry', icon: '/src/Icons/restart.png', action: () => {restartGame()}}
 ]
 
 const homeText = 'Wellcome in Concentration Game! Check instruction and start the game. Good Luck && Have Fun!'
 
 var homeButtonsArray = [
-  {name: 'Instruction', action: () => {handleRouteToInstruction()}}, // handler in index
+  {name: 'Instruction', action: () => {handleOpenInstruction()}}, // handler in index
   {name: 'Start', action: () => {handleRouteToGame()}} // handler in index
 ]
 
 const instructionText = 'Instruction'
 
-var Cards = [
+const Cards = [
   {id:0, idImage: 1, image:'/src/Images/apple.png', clicked:false, able: true},
   {id:1, idImage: 2, image:'/src/Images/pear.png', clicked:false, able: true},
   {id:2, idImage: 3, image:'/src/Images/orange.png', clicked:false, able: true},

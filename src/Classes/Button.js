@@ -10,12 +10,13 @@ class Button {
   }
 
   handleCreate = () => {
-    const button = document.createElement('button')
+    const button = document.createElement(this.icon ? 'img' : 'button')
+    this.icon ? button.src = this.icon : null
     button.textContent = this.name
     button.className = this.classe
     button.addEventListener('click', this.onClick)
-    this.changeClass ? button.addEventListener('mouseenter', () => {button.className = this.changeClass}) : null
-    this.changeClass ? button.addEventListener('mouseleave', () => {button.className = this.classe}) : null
+    this.icon ? null : (this.changeClass ? button.addEventListener('mouseenter', () => {button.className = this.changeClass}) : null)
+    this.icon ? null : (this.changeClass ? button.addEventListener('mouseleave', () => {button.className = this.classe}) : null)
     return button
   }
 }

@@ -11,7 +11,7 @@ const HomeRender = () => {
 
   homeButtonsArray.map(button => { // Buttons rendering by MAP method
     HomeButtons.appendChild(
-      new Button(button.name, 'home-button', button.action, 'home-button-moved').handleRender
+      new Button(button.name, null, 'home-button', button.action, 'home-button-moved').handleRender
     )
   })
 

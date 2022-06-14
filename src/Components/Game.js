@@ -1,3 +1,4 @@
+
 let CardsArray = []
 
 let firstCheckedCard = ''
@@ -17,6 +18,8 @@ gameStart = () => { // Start New Game
   CardsArray = []
   gameCardArrayCreate = () => {
     Cards.map(card => {
+      card.clicked = false
+      card.able = true
       CardsArray.push(card)
     })
     CardsArray.sort(() => (Math.random() > 0.5) ? 1 : -1)
@@ -33,11 +36,11 @@ gameCardArrayRender = () => { // Render Cards in Row - Always 4 or less in singl
         new Card(card.id ,card.idImage, card.image, 'game-card', () => {}, 'game-card-moved', card.clicked, card.able).handleRender
       )
     index++
-    }, 10)
+    }, 0)
   })
 }
 
-countersRender = (information) => {
+countersRender = (stats) => {
 
   countersArray.map(counter => {
 
@@ -56,30 +59,21 @@ countersRender = (information) => {
     counterDiv.appendChild(counterName)
     counterDiv.appendChild(counterIndex)
 
-    information.appendChild(counterDiv)
+    stats.appendChild(counterDiv)
   })
 }
 
-updateTrialCounter = () => {
-  trialCounter++
+updateCounters = () => { // every losed or winned pair
   document.getElementById('counter-trials').textContent = trialCounter
-}
-
-updateWinTrialCounter = () => {
-  winTrialCounter++
   document.getElementById('counter-win-trials').textContent = winTrialCounter
-}
-
-updateLoseTrialCounter = () => {
-  loseTrialCounter++
   document.getElementById('counter-lose-trials').textContent = loseTrialCounter
 }
 
-informationRender = (game) => {
-  const information = document.createElement('section')
-  information.className = 'game-information'
-  countersRender(information)
-  game.appendChild(information)
+statsRender = (game) => { // render stats and counters
+  const stats = document.createElement('section')
+  stats.className = 'game-information'
+  countersRender(stats)
+  game.appendChild(stats)
 }
 
 gameRender = () => { // Render Game Front-End
@@ -96,7 +90,7 @@ gameRender = () => { // Render Game Front-End
     }
   } 
 
-  informationRender(game)
+  statsRender(game)
   gameRowRender()
   gameCardArrayRender()
   
@@ -104,7 +98,7 @@ gameRender = () => { // Render Game Front-End
   return game
 }
 
-gameCheckCard = (card, element) => {
+gameCheckCard = (card, element) => { //Check and changeState for choised card
 
   let indexCard = CardsArray.findIndex(ele => card.id === ele.id)
 
@@ -146,7 +140,8 @@ function winPair(first, second) {
   handleBlockCard(indexCardFirst, first)
   handleBlockCard(indexCardSecond, second)
 
-  updateWinTrialCounter()
+  winTrialCounter++
+  updateCounters()
 
 }
 
@@ -166,28 +161,52 @@ function losePair(first, second) {
     document.getElementById(second.id).src = defaultImage
   }, 1000)
 
-  updateLoseTrialCounter()
+  loseTrialCounter++
+  updateCounters()
 }
 
-function checkWin() {
+function checkWin() { // Check Win Game
   if(CardsArray.filter(card => card.able === true).length === 0) {
-    alert("Gratulacje zwycięstwo") // zmienić na jakiś napis do góry zamiast licznika
+
+    const congratulationSection = document.createElement('section')
+    congratulationSection.className = 'game-congratulation'
+
+    root.textContent = ''
+    root.appendChild(InstructionRender())
+    root.appendChild(HeaderRedner())
+    root.appendChild(MainRender())
+    updateCounters()
   }
 }
 
 gamePairCheckResult = () => { // 
+
   if(firstCheckedCard.idImage === secondCheckedCard.idImage) {
     winPair(firstCheckedCard, secondCheckedCard)
   }
   else {
     losePair(firstCheckedCard, secondCheckedCard)
   }
-  updateTrialCounter()
+
+  trialCounter++
+  updateCounters()
   checkWin()
+}
+
+congratulationRender = () => {
+  
 }
 
 gameStart()
 
 restartGame = () => {
-  
+  firstCheckedCard = ''
+  secondCheckedCard = ''
+  trialCounter = 0
+  winTrialCounter = 0
+  loseTrialCounter = 0
+  CardsArray=''
+  gameStart()
+  console.log(CardsArray)
+  handleRouteToGame()
 }

@@ -1,0 +1,8 @@
+.main {
+  width: 100vw;
+  background-image: url("/src/Images/background.png");
+  background-position-y: bottom;
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=Main.css.map */

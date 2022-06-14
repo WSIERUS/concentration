@@ -7,15 +7,17 @@ function handleRouteToGame() { // Route to Game Aplication
     root.textContent = ''
     root.appendChild(HeaderRedner())
     root.appendChild(MainRender())
-    console.log('game')
+    updateCounters()
   }, 500)
 }
 
-function handleRouteToInstruction() { // Route to Instruction
+function handleOpenInstruction() { // Route to Instruction
   setTimeout(() => {
     root.textContent = ''
     root.appendChild(InstructionRender())
-    console.log('instruction')
+    root.appendChild(HeaderRedner())
+    root.appendChild(MainRender())
+    updateCounters()
   }, 500)
 }
 
