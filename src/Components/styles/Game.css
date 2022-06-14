@@ -6,6 +6,67 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: static;
+}
+
+.counter-div {
+  margin: 10px 0 10px 0;
+  width: 5cm;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.counter-index {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.counter-name {
+  letter-spacing: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+#counter-win-trials {
+  color: green;
+}
+
+#counter-lose-trials {
+  color: red;
 }
 
 .game-row-cards {
@@ -19,8 +80,9 @@
 }
 
 .game-card, .game-card-moved {
-  width: 100px;
-  height: 150px;
+  margin: 10px;
+  width: 80px;
+  height: 120px;
   border: 2px solid;
   border-radius: 10px;
   background-position: center;

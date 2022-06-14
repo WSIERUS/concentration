@@ -2,11 +2,11 @@ const pageName = 'Concentration Game'
 
 var naviBarElementsArray = [
   {name: 'AbouUs', icon: null, action: () => {handleRouteToAbouUs()}}, // handler in index
-  {name: 'Instruction', icon: null, action: () => {handleRouteToInstruction()}}, // handler in index
-  {name: 'Retry', icon: null, action: () => {restartGame()}}
+  {name: 'Instruction', icon: '/src/Icons/instruction.png', action: () => {handleRouteToInstruction()}}, // handler in index
+  {name: 'Retry', icon: '/src/Icons/restart.png', action: () => {restartGame()}}
 ]
 
-const homeText = 'Wellcome in Concentration Game! Check instruction and start the game.'
+const homeText = 'Wellcome in Concentration Game! Check instruction and start the game. Good Luck && Have Fun!'
 
 var homeButtonsArray = [
   {name: 'Instruction', action: () => {handleRouteToInstruction()}}, // handler in index

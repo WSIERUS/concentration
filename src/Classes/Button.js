@@ -1,7 +1,8 @@
 class Button {
 
-  constructor(name, classe, onClick, changeClass ) {
+  constructor(name, icon, classe, onClick, changeClass ) {
     this.name = name
+    this.icon = icon
     this.classe = classe,
     this.onClick = onClick
     this.changeClass = changeClass

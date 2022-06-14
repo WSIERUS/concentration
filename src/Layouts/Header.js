@@ -10,7 +10,7 @@ const NaviBarRender = () => { // Rendering NaviBar in right side Header
   NaviBar.className = 'header-toolbar'
   for(let i = 0; i <= 2; i++) { // Buttons rendering by FOR loop
     NaviBar.appendChild(
-      new Button(naviBarElementsArray[i].name, 'header-navibar-element', naviBarElementsArray[i].action).handleRender
+      new Button(naviBarElementsArray[i].name, naviBarElementsArray[i].icon, 'header-navibar-element', naviBarElementsArray[i].action).handleRender
     )  /// zmienić dane do renderowania na iconki narazie mi się nie chce szukać xD
   }
   return NaviBar

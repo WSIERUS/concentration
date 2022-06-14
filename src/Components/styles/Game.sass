@@ -1,14 +1,48 @@
 .game
   display: flex
   flex-direction: column
+  justify-content: center
+  align-items: center
+
+.game-information
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: flex-start
+  position: static
+
+.counter-div
+  margin: 10px 0 10px 0
+  width: 5cm
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+.counter-index
+  font-family: 'Poppins', sans-serif
+  font-weight: bold
+  font-size: 20px
+
+.counter-name
+  letter-spacing: 5px
+  font-family: 'Poppins', sans-serif
+  font-size: 20px
+
+#counter-win-trials
+  color: green
+
+#counter-lose-trials
+  color: red
 
 .game-row-cards
   display: flex
   flex-direction: row
 
 %Default-Card
-  width: 100px
-  height: 150px
+  margin: 10px
+  width: 80px
+  height: 120px
   border: 2px solid
   border-radius: 10px
   background-position: center

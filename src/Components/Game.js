@@ -3,7 +3,15 @@ let CardsArray = []
 let firstCheckedCard = ''
 let secondCheckedCard = ''
 
+const countersArray = [
+  {id: 'counter-trials', name: 'All Trials'}, 
+  {id: 'counter-win-trials', name: 'Win Trials'}, 
+  {id: 'counter-lose-trials', name: 'Lose Trials'}
+]
+
 let trialCounter = 0
+let winTrialCounter = 0
+let loseTrialCounter = 0
 
 gameStart = () => { // Start New Game
   CardsArray = []
@@ -29,13 +37,48 @@ gameCardArrayRender = () => { // Render Cards in Row - Always 4 or less in singl
   })
 }
 
-countersRender = () => {
-  
+countersRender = (information) => {
+
+  countersArray.map(counter => {
+
+    let counterIndex = document.createElement('span')
+    counterIndex.setAttribute('id', counter.id)
+    counterIndex.className = 'counter-index'
+    counterIndex.textContent = 0
+
+    let counterName = document.createElement('span')
+    counterName.setAttribute('id', `${counter.id}-name`)
+    counterName.className = 'counter-name'
+    counterName.textContent = counter.name + ': '
+
+    let counterDiv = document.createElement('div')
+    counterDiv.className = 'counter-div'
+    counterDiv.appendChild(counterName)
+    counterDiv.appendChild(counterIndex)
+
+    information.appendChild(counterDiv)
+  })
+}
+
+updateTrialCounter = () => {
+  trialCounter++
+  document.getElementById('counter-trials').textContent = trialCounter
+}
+
+updateWinTrialCounter = () => {
+  winTrialCounter++
+  document.getElementById('counter-win-trials').textContent = winTrialCounter
+}
+
+updateLoseTrialCounter = () => {
+  loseTrialCounter++
+  document.getElementById('counter-lose-trials').textContent = loseTrialCounter
 }
 
 informationRender = (game) => {
   const information = document.createElement('section')
   information.className = 'game-information'
+  countersRender(information)
   game.appendChild(information)
 }
 
@@ -59,10 +102,6 @@ gameRender = () => { // Render Game Front-End
   
 
   return game
-}
-
-updateCounter = () => {
-  document.querySelector('.counter').textContent = 'Ilość prób: ' + trialCounter
 }
 
 gameCheckCard = (card, element) => {
@@ -107,6 +146,8 @@ function winPair(first, second) {
   handleBlockCard(indexCardFirst, first)
   handleBlockCard(indexCardSecond, second)
 
+  updateWinTrialCounter()
+
 }
 
 function losePair(first, second) {
@@ -124,6 +165,8 @@ function losePair(first, second) {
     document.getElementById(first.id).src = defaultImage
     document.getElementById(second.id).src = defaultImage
   }, 1000)
+
+  updateLoseTrialCounter()
 }
 
 function checkWin() {
@@ -139,8 +182,7 @@ gamePairCheckResult = () => { //
   else {
     losePair(firstCheckedCard, secondCheckedCard)
   }
-  trialCounter++
-  updateCounter()
+  updateTrialCounter()
   checkWin()
 }
 
