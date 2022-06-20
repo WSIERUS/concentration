@@ -2,12 +2,22 @@ const InstructionRender = () => {
   const Instruction = document.createElement('div')
   Instruction.className = 'instruction'
 
+  const instructionDescriptions = document.createElement('div')
+  instructionDescriptions.className = 'instruction-descriptions'
+
+  instructionText.map(text => {
+    const description = document.createElement('div')
+    description.textContent = text
+    description.className = 'instruction-desciption'
+    instructionDescriptions.appendChild(description)
+  })
+
   Instruction.appendChild(
-    new Description(instructionText, 'instruction-description').handleRender
+   instructionDescriptions
   )
 
   Instruction.appendChild(
-    new Button('elo', null, 'klasa', () => handleRouteToGame()).handleRender
+    new Button('Rozumiem', null, 'instruction-button', () => handleRouteToGame()).handleRender
   )
 
   return Instruction

@@ -21,10 +21,10 @@ function handleOpenInstruction() { // Route to Instruction
   }, 500)
 }
 
-function handleRouteToAbouUs() { // Route to Instruction
+function handleOpenAboutUs() { // Route to AboutUs
   setTimeout(() => {
     root.textContent = ''
-    root.appendChild(AbouUsRender())
-    console.log('instruction')
+    root.appendChild(AboutUsRender())
   }, 500)
 }
+

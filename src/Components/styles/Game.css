@@ -98,4 +98,12 @@
 .game-card-moved {
   border-color: #000f74;
 }
+
+.game-congratulation {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: fixed;
+}
 /*# sourceMappingURL=Game.css.map */

@@ -118,6 +118,7 @@ gameCheckCard = (card, element) => { //Check and changeState for choised card
 
     gamePairCheckResult()
   }
+
 }
 
 function winPair(first, second) {
@@ -168,11 +169,18 @@ function losePair(first, second) {
 function checkWin() { // Check Win Game
   if(CardsArray.filter(card => card.able === true).length === 0) {
 
-    const congratulationSection = document.createElement('section')
+    const congratulationSection = document.createElement('div')
     congratulationSection.className = 'game-congratulation'
 
+    congratulationSection.appendChild(
+      new Description(congrats, 'congrats-description').handleRender
+    )
+    congratulationSection.appendChild(
+      new Button('Zacznij od nowa!', false, 'congrats-button', () => restartGame(), 'congrats-button-moved').handleRender
+    )
+
     root.textContent = ''
-    root.appendChild(InstructionRender())
+    root.appendChild(congratulationSection)
     root.appendChild(HeaderRedner())
     root.appendChild(MainRender())
     updateCounters()
@@ -191,10 +199,6 @@ gamePairCheckResult = () => { //
   trialCounter++
   updateCounters()
   checkWin()
-}
-
-congratulationRender = () => {
-  
 }
 
 gameStart()
