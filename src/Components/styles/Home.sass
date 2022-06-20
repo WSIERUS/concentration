@@ -8,16 +8,18 @@
   justify-content: center
 
 .home-description
+  width: 85vw
   font-family: 'Poppins', sans-serif
   font-size: 18px
   color: rgba(0, 12, 116, 1)
+  text-align: center
 
 .home-buttons
   display: flex
   flex-direction: row
 
 %Default-Home-Button
-  width: 20vw
+  width: 5cm
   margin: 20px
   border: 1px solid
   border-color: rgba(0, 12, 116, 1)
@@ -38,3 +40,12 @@
   @extend %Default-Home-Button
   color: rgba(255, 255, 255, 1)
   background-color: rgba(0, 12, 116, 1)
+
+@media (max-width: 15cm)
+  .home-buttons
+    margin-top: 10px
+    flex-direction: column-reverse
+
+  %Default-Home-Button
+    width: 80vw
+    margin: 5px

@@ -1,6 +1,41 @@
 .instruction
   height: 100vh
   width: 100vw
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: rgba(0, 0, 0, 0.6)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
   text-align: center
   position: fixed
+
+.instruction-descriptions
+  margin: 0 0 0.5cm 0
+
+.instruction-description
+  margin: 0.25cm 0 0.25cm 0
+  font-size: 0.5cm
+  font-family: 'Poppins', sans-serif
+  color: white
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+
+%Default-Button
+  border: 2px none
+  border-radius: 5px
+  padding: 0 1cm 0 1cm
+  font-size: 0.75cm
+  font-family: 'Poppins', sans-serif
+  color: white
+  cursor: pointer
+  transition-duration: 0.3s
+  transition-property: background-color text-shadow
+
+.instruction-button
+  @extend %Default-Button
+  background-color: rgba(0, 0, 0, 0)
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+
+.instruction-button-moved
+  @extend %Default-Button
+  background-color: rgba(0, 12, 116, 0.5)
+  text-shadow: none

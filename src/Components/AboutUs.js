@@ -3,11 +3,11 @@ const AboutUsRender = () => {
   AboutUs.className = 'about-us'
 
   AboutUs.appendChild(
-    new Description(AboutUsText, 'about-us-descriptions').handleRender
+    new Description(AboutUsText, 'about-us-description').handleRender
   )
 
   AboutUs.appendChild(
-    new Button('Powrót', null, 'about-us-button', () => handleRouteToGame()).handleRender
+    new Button('Powrót', null, 'about-us-button', () => handleRouteToGame(), 'about-us-button-moved').handleRender
   )
 
   return AboutUs

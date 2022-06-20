@@ -1,1 +1,63 @@
-/* No CSS *//*# sourceMappingURL=AboutUs.css.map */
+.about-us {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.about-us-description {
+  width: 50vw;
+  margin: 0 0 0.5cm 0;
+  font-size: 0.5cm;
+  font-family: 'Poppins', sans-serif;
+  color: #000f74;
+}
+
+.about-us-button, .about-us-button-moved {
+  border: 2px solid #000f74;
+  border-radius: 5px;
+  padding: 0 1.5cm 0 1.5cm;
+  font-size: 0.66cm;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: background-color color;
+  transition-property: background-color color;
+}
+
+.about-us-button {
+  background-color: white;
+  color: #000f74;
+}
+
+.about-us-button-moved {
+  background-color: #000f74;
+  color: white;
+}
+
+@media (orientation: portrait) {
+  .about-us-description {
+    width: 75vw;
+    font-size: 0.3cm;
+  }
+  .about-us-button, .about-us-button-moved {
+    width: 80vw;
+    padding: 0;
+    font-size: 0.45cm;
+  }
+}
+/*# sourceMappingURL=AboutUs.css.map */

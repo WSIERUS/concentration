@@ -8,7 +8,7 @@ const InstructionRender = () => {
   instructionText.map(text => {
     const description = document.createElement('div')
     description.textContent = text
-    description.className = 'instruction-desciption'
+    description.className = 'instruction-description'
     instructionDescriptions.appendChild(description)
   })
 
@@ -17,7 +17,7 @@ const InstructionRender = () => {
   )
 
   Instruction.appendChild(
-    new Button('Rozumiem', null, 'instruction-button', () => handleRouteToGame()).handleRender
+    new Button('Rozumiem!', null, 'instruction-button', () => handleRouteToGame(), 'instruction-button-moved').handleRender
   )
 
   return Instruction
