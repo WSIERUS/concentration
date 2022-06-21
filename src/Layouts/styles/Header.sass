@@ -17,51 +17,74 @@
   color: rgba(0, 12, 116, 1)
   letter-spacing: 0.1cm
 
-.header-navibar
+.header-btn
+  margin: 0
+  border: 0
+  padding: 10px
+  display: inline-block
+  background-color: transparent
+  cursor: pointer
+
+.header-btn-box
+  width: 40px
+  height: 20px
+  display: inline-block
+  position: relative
+  top: 0
+  left: 0
+
+.header-btn-line
+  width: 100%
+  height: 3px
+  background-color: black
+  position: absolute
+
+  top: 10px
+
+.header-btn-line::before,
+.header-btn-line::after,
+  width: 100%
+  height: 3px
+  background-color: black
+  position: absolute
+
+  left: 0
+  top: 0
+  content: ''
+
+.header-btn-line::before
+  top: -10px
+
+.header-btn-line::after
+  top: 10px
+
+.header-btn-active.header-btn-line
+  background-color: transparent
+
+.header-btn-active.header-btn-line::before
+  transform: translateY(10px) rotate(45deg)
+
+.header-btn-active.header-btn-line::after
+  transform: translateY(-10px) rotate(-45deg)
+
+%Navi-Bar
+  width: 6cm
+  background-color: #dddddd
   display: flex
-  flex-direction: row
+  flex-direction: column
   align-items: center
+  align-self: right
+  position: absolute
+  transition-duration: 0.5s
+  transition-property: transform
 
-@media (orientation: landscape)
-  img.header-navibar-element // styl dla elementów pasku
-    margin: 0 0.25cm 0 0.25cm
-    height: 1cm
-    cursor: pointer
+.header-navibar
+  @extend %Navi-Bar
+  transform: translateX(-6cm)
 
-  %Default-Button-Element
-    margin: 0 0.25cm 0 0.25cm
-    height: 1cm
-    border: 1px solid rgba(0, 0, 0, 0)
-    background-color: rgba(0, 0, 0, 0)
-    font-family: 'Poppins', sans-serif
-    font-size: 0.5cm
-    cursor: pointer
-    transition-property: border-bottom-color
-    transition-duration: 0.4s
-
-  button.header-navibar-element
-    @extend %Default-Button-Element
-    border-bottom-color: rgba(0, 0, 0, 0)
-
-  button.header-navibar-element-moved
-    @extend %Default-Button-Element
-    border-bottom-color: rgba(0, 0, 0, 1)
-
-@media (orientation: portrait)
-  img.header-navibar-element
-    margin: 0
-    width: 0
-    height: 0
-    cursor: default
-
-  %Default-Button-Element
-    margin: 0
-    height: 0
-    width: 0
-    border: 0 none
-    background-color: rgba(0, 0, 0, 0)
-    font-size: 0
-    cursor: default
+.header-navibar.open
+  @extend %Navi-Bar
+  transform: translateX(0)
 
 @media (max-width: 15cm)
   .header
@@ -70,60 +93,3 @@
   .header-logo
     margin-left: 0.33cm
     font-size: 0.5cm
-
-// @media (orientation: landscape)
-//   img.header-navibar-element // styl dla elementów pasku
-//     margin: 0 0.25cm 0 0.25cm
-//     height: 1cm
-//     cursor: pointer
-
-//   %Default-Button-Element
-//     margin: 0 0.25cm 0 0.25cm
-//     height: 1cm
-//     border: 1px solid rgba(0, 0, 0, 0)
-//     background-color: rgba(0, 0, 0, 0)
-//     font-family: 'Poppins', sans-serif
-//     font-size: 0.5cm
-//     cursor: pointer
-//     transition-property: border-bottom-color
-//     transition-duration: 0.4s
-
-//   button.header-navibar-element
-//     @extend %Default-Button-Element
-//     border-bottom-color: rgba(0, 0, 0, 0)
-
-//   button.header-navibar-element-moved
-//     @extend %Default-Button-Element
-//     border-bottom-color: rgba(0, 0, 0, 1)
-
-// @media (orientation: portrait)
-//   img.header-navibar-element
-//     margin: 0
-//     width: 0
-//     height: 0
-//     cursor: default
-
-//   %Default-Button-Element
-//     margin: 0
-//     height: 0
-//     width: 0
-//     border: 0 none
-//     background-color: rgba(0, 0, 0, 0)
-//     font-size: 0
-//     cursor: default
-
-%Navi-Bar
-  width: 200px
-  background-color: white
-  display: flex
-  flex-direction: column
-  align-items: center
-  position: absolute
-
-.header-navibar
-  @extend %Navi-Bar
-  transform: translateX(-300px)
-
-.header-navibar.open
-  @extend %Navi-Bar
-  transform: translateX(0px)

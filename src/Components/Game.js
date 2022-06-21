@@ -206,6 +206,7 @@ restartGame = (isRoute) => { // restart with 2 option if only restarting or if w
   winTrialCounter = 0
   loseTrialCounter = 0
   CardsArray=''
+  menuOpen = false
   gameStart()
   console.log(CardsArray)
   if(isRoute == true) handleRouteToGame()
