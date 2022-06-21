@@ -13,7 +13,7 @@
   margin: 0 0 0.5cm 0
 
 .instruction-description
-  margin: 0.25cm 0 0.25cm 0
+  margin: 0.25cm 1cm 0.25cm 1cm
   font-size: 0.5cm
   font-family: 'Poppins', sans-serif
   color: white
@@ -23,7 +23,7 @@
   border: 2px none
   border-radius: 5px
   padding: 0 1cm 0 1cm
-  font-size: 0.75cm
+  font-size: 0.7cm
   font-family: 'Poppins', sans-serif
   color: white
   cursor: pointer
@@ -39,3 +39,22 @@
   @extend %Default-Button
   background-color: rgba(0, 12, 116, 0.5)
   text-shadow: none
+
+@media ( max-width: 15cm )
+  .instruction-description
+    margin: 0.2cm 0.8cm 0.2cm 0.8cm
+    font-size: 0.4cm
+
+  %Default-Button
+    padding: 0 1cm 0 1cm
+    font-size: 0.55cm
+
+@media ( max-width: 10cm )
+  .instruction-description
+    margin: 0.2cm 0.8cm 0.2cm 0.8cm
+    font-size: 0.3cm
+
+  %Default-Button
+    border-radius: 5px
+    padding: 0 0.6cm 0 0.6cm
+    font-size: 0.45cm
