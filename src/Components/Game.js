@@ -173,7 +173,7 @@ function checkWin() { // Check Win Game
     congratulationSection.className = 'game-congratulation'
 
     congratulationSection.appendChild(
-      new Description(congrats, 'congrats-description').handleRender
+      new Description(`Congrats victory. You did ${trialCounter} trials`, 'congrats-description').handleRender
     )
     congratulationSection.appendChild(
       new Button('Start Again!', false, 'congrats-button', () => restartGame(true), 'congrats-button-moved').handleRender

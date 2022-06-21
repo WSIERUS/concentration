@@ -43,5 +43,3 @@ const Cards = [
   {id:14, idImage: 7, image:'/src/Images/rasberry.png', clicked:false, able: true},
   {id:15, idImage: 8, image:'/src/Images/blackberry.png', clicked:false, able: true},
 ]
-
-const congrats = 'Gratulację zwycięstwa'

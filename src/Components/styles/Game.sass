@@ -41,8 +41,8 @@
 
 %Default-Card
   margin: 10px
-  width: 80px
-  height: 120px
+  width: 2cm
+  height: 3cm
   border: 2px solid
   border-radius: 10px
   background-position: center
@@ -71,7 +71,7 @@
 
 .congrats-description
   margin: 0 0 0.5cm 0
-  font-size: 0.5cm
+  font-size: 0.66cm
   font-family: 'Poppins', sans-serif
   color: white
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
@@ -96,12 +96,52 @@
   background-color: rgba(0, 15, 116, 1)
   color: white
 
-// @media ( orientation: portrait )
-//   .congrats-description
-//     width: 75vw
-//     font-size: 0.4cm
+@media ( max-width: 15cm )
+  .counter-div
+    margin: 10px 0 10px 0
+    width: 5cm
+    display: flex
 
-//   %Default-Button
-//     width: 80vw
-//     padding: 0
-//     font-size: 0.45cm
+  .counter-index
+    font-size: 0.5cm
+
+  .counter-name
+    font-size: 0.5cm
+
+  %Default-Card
+    margin: 5px
+    width: 1.5cm
+    height: 2.25cm
+
+  .congrats-description
+    margin: 0 0 0.5cm 0
+    font-size: 0.5cm
+
+  %Default-Button
+    padding: 0 1cm 0 1cm
+    font-size: 0.5cm
+
+@media ( max-width: 7.5cm )
+  .counter-div
+    margin: 6px 0 6px 0
+    width: 5cm
+    display: flex
+
+  .counter-index
+    font-size: 0.3cm
+
+  .counter-name
+    font-size: 0.3cm
+
+  %Default-Card
+    margin: 5px
+    width: 1.2cm
+    height: 1.8cm
+
+  .congrats-description
+    margin: 0 0 0.4cm 0
+    font-size: 0.4cm
+
+  %Default-Button
+    padding: 0 1cm 0 1cm
+    font-size: 0.4cm
