@@ -22,28 +22,43 @@
   flex-direction: row
   align-items: center
 
-img.header-navibar-element // styl dla elementów pasku
-  margin: 0 0.25cm 0 0.25cm
-  height: 1cm
-  cursor: pointer
+@media (orientation: landscape)
+  img.header-navibar-element // styl dla elementów pasku
+    margin: 0 0.25cm 0 0.25cm
+    height: 1cm
+    cursor: pointer
 
-%Default-Button-Element
-  margin: 0 0.25cm 0 0.25cm
-  height: 1cm
-  border: 1px solid rgba(0, 0, 0, 0)
-  background-color: rgba(0, 0, 0, 0)
-  font-family: 'Poppins', sans-serif
-  font-size: 0.5cm
-  cursor: pointer
-  transition-property: border-bottom-color
-  transition-duration: 0.4s
+  %Default-Button-Element
+    margin: 0 0.25cm 0 0.25cm
+    height: 1cm
+    border: 1px solid rgba(0, 0, 0, 0)
+    background-color: rgba(0, 0, 0, 0)
+    font-family: 'Poppins', sans-serif
+    font-size: 0.5cm
+    cursor: pointer
+    transition-property: border-bottom-color
+    transition-duration: 0.4s
 
-button.header-navibar-element
-  @extend %Default-Button-Element
-  border-bottom-color: rgba(0, 0, 0, 0)
+  button.header-navibar-element
+    @extend %Default-Button-Element
+    border-bottom-color: rgba(0, 0, 0, 0)
 
-button.header-navibar-element-moved
-  @extend %Default-Button-Element
-  border-bottom-color: rgba(0, 0, 0, 1)
+  button.header-navibar-element-moved
+    @extend %Default-Button-Element
+    border-bottom-color: rgba(0, 0, 0, 1)
 
 @media (orientation: portrait)
+  img.header-navibar-element
+    margin: 0
+    width: 0
+    height: 0
+    cursor: default
+
+  %Default-Button-Element
+    margin: 0
+    height: 0
+    width: 0
+    border: 0 none
+    background-color: rgba(0, 0, 0, 0)
+    font-size: 0
+    cursor: default

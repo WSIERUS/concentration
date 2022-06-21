@@ -41,37 +41,48 @@
           align-items: center;
 }
 
-img.header-navibar-element {
-  margin: 0 0.25cm 0 0.25cm;
-  height: 1cm;
-  cursor: pointer;
-}
-
-button.header-navibar-element, button.header-navibar-element-moved {
-  margin: 0 0.25cm 0 0.25cm;
-  height: 1cm;
-  border: 1px solid rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.5cm;
-  cursor: pointer;
-  -webkit-transition-property: border-bottom-color;
-  transition-property: border-bottom-color;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-
-button.header-navibar-element {
-  border-bottom-color: rgba(0, 0, 0, 0);
-}
-
-button.header-navibar-element-moved {
-  border-bottom-color: black;
+@media (orientation: landscape) {
+  img.header-navibar-element {
+    margin: 0 0.25cm 0 0.25cm;
+    height: 1cm;
+    cursor: pointer;
+  }
+  button.header-navibar-element, button.header-navibar-element-moved {
+    margin: 0 0.25cm 0 0.25cm;
+    height: 1cm;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.5cm;
+    cursor: pointer;
+    -webkit-transition-property: border-bottom-color;
+    transition-property: border-bottom-color;
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+  }
+  button.header-navibar-element {
+    border-bottom-color: rgba(0, 0, 0, 0);
+  }
+  button.header-navibar-element-moved {
+    border-bottom-color: black;
+  }
 }
 
 @media (orientation: portrait) {
-  .header-logo {
-    margin: 10cm;
+  img.header-navibar-element {
+    margin: 0;
+    width: 0;
+    height: 0;
+    cursor: default;
+  }
+  button.header-navibar-element, button.header-navibar-element-moved {
+    margin: 0;
+    height: 0;
+    width: 0;
+    border: 0 none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+    cursor: default;
   }
 }
 /*# sourceMappingURL=Header.css.map */

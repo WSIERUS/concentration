@@ -176,14 +176,10 @@ function checkWin() { // Check Win Game
       new Description(congrats, 'congrats-description').handleRender
     )
     congratulationSection.appendChild(
-      new Button('Zacznij od nowa!', false, 'congrats-button', () => restartGame(), 'congrats-button-moved').handleRender
+      new Button('Start Again!', false, 'congrats-button', () => restartGame(true), 'congrats-button-moved').handleRender
     )
-
-    root.textContent = ''
-    root.appendChild(congratulationSection)
-    root.appendChild(HeaderRedner())
-    root.appendChild(MainRender())
-    updateCounters()
+  
+    handleOpenCongrats(congratulationSection)
   }
 }
 
@@ -203,7 +199,7 @@ gamePairCheckResult = () => { //
 
 gameStart()
 
-restartGame = () => {
+restartGame = (isRoute) => { // restart with 2 option if only restarting or if with routing
   firstCheckedCard = ''
   secondCheckedCard = ''
   trialCounter = 0
@@ -212,5 +208,5 @@ restartGame = () => {
   CardsArray=''
   gameStart()
   console.log(CardsArray)
-  handleRouteToGame()
+  if(isRoute == true) handleRouteToGame()
 }

@@ -28,3 +28,13 @@ function handleOpenAboutUs() { // Route to AboutUs
   }, 500)
 }
 
+function handleOpenCongrats(congrats) {
+  setTimeout(() => {
+    restartGame(false)
+    root.textContent = ''
+    root.appendChild(congrats)
+    root.appendChild(HeaderRedner())
+    root.appendChild(MainRender())
+    updateCounters()
+  }, 500)
+}

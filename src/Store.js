@@ -3,7 +3,7 @@ const pageName = 'Concentration Game'
 var naviBarElementsArray = [
   {name: 'AbouUs', icon: null, action: () => {handleOpenAboutUs()}}, // handler in index
   {name: 'Instruction', icon: '/src/Icons/instruction.png', action: () => {handleOpenInstruction()}}, // handler in index
-  {name: 'Retry', icon: '/src/Icons/restart.png', action: () => {restartGame()}}
+  {name: 'Retry', icon: '/src/Icons/restart.png', action: () => {restartGame(true)}}
 ]
 
 const homeText = 'Wellcome in Concentration Game! Check instruction and start the game. Good Luck && Have Fun!'
