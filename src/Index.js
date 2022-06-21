@@ -7,6 +7,7 @@ function handleRouteToGame() { // Route to Game Aplication
     root.textContent = ''
     root.appendChild(HeaderRedner())
     root.appendChild(MainRender())
+    root.appendChild(FooterRender())
     updateCounters()
   }, 500)
 }
@@ -17,6 +18,7 @@ function handleOpenInstruction() { // Route to Instruction
     root.appendChild(InstructionRender())
     root.appendChild(HeaderRedner())
     root.appendChild(MainRender())
+    root.appendChild(FooterRender())
     updateCounters()
   }, 500)
 }
@@ -35,6 +37,7 @@ function handleOpenCongrats(congrats) {
     root.appendChild(congrats)
     root.appendChild(HeaderRedner())
     root.appendChild(MainRender())
+    root.appendChild(FooterRender())
     updateCounters()
   }, 500)
 }

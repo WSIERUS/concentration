@@ -79,7 +79,7 @@
           flex-direction: row;
 }
 
-.game-card, .game-card-moved {
+.game-card, .game-card-moved, .game-card-disable {
   margin: 10px;
   width: 2cm;
   height: 3cm;
@@ -97,6 +97,10 @@
 
 .game-card-moved {
   border-color: #000f74;
+}
+
+.game-card-disable {
+  opacity: 0.5;
 }
 
 .game-congratulation {
@@ -165,7 +169,7 @@
   .counter-name {
     font-size: 0.5cm;
   }
-  .game-card, .game-card-moved {
+  .game-card, .game-card-moved, .game-card-disable {
     margin: 5px;
     width: 1.5cm;
     height: 2.25cm;
@@ -194,7 +198,7 @@
   .counter-name {
     font-size: 0.3cm;
   }
-  .game-card, .game-card-moved {
+  .game-card, .game-card-moved, .game-card-disable {
     margin: 5px;
     width: 1.0cm;
     height: 1.5cm;
