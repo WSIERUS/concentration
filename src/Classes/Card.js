@@ -4,7 +4,7 @@
 // - odkryta 
 // - nie odkryta
 
-let defaultImage = "/src/Images/default.png"
+let defaultImage = "../src/Images/default.png"
 
 class Card {
 

@@ -26,22 +26,22 @@ const instructionText = [
 const AboutUsText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate repellendus quidem sequi maiores nam hic, excepturi dolorem quam accusantium! Dolorem voluptate dicta ducimus reiciendis? Minima laborum dolore eligendi? Nobis!'
 
 const Cards = [
-  {id:0, idImage: 1, image:'/src/Images/apple.png', clicked:false, able: true},
-  {id:1, idImage: 2, image:'/src/Images/pear.png', clicked:false, able: true},
-  {id:2, idImage: 3, image:'/src/Images/orange.png', clicked:false, able: true},
-  {id:3, idImage: 4, image:'/src/Images/peach.png', clicked:false, able: true},
-  {id:4, idImage: 5, image:'/src/Images/strawberry.png', clicked:false, able: true},
-  {id:5, idImage: 6, image:'/src/Images/banana.png', clicked:false, able: true},
-  {id:6, idImage: 7, image:'/src/Images/rasberry.png', clicked:false, able: true},
-  {id:7, idImage: 8, image:'/src/Images/blackberry.png', clicked:false, able: true},
-  {id:8, idImage: 1, image:'/src/Images/apple.png', clicked:false, able: true},
-  {id:9, idImage: 2, image:'/src/Images/pear.png', clicked:false, able: true},
-  {id:10, idImage: 3, image:'/src/Images/orange.png', clicked:false, able: true},
-  {id:11, idImage: 4, image:'/src/Images/peach.png', clicked:false, able: true},
-  {id:12, idImage: 5, image:'/src/Images/strawberry.png', clicked:false, able: true},
-  {id:13, idImage: 6, image:'/src/Images/banana.png', clicked:false, able: true},
-  {id:14, idImage: 7, image:'/src/Images/rasberry.png', clicked:false, able: true},
-  {id:15, idImage: 8, image:'/src/Images/blackberry.png', clicked:false, able: true},
+  {id:0, idImage: 1, image:'../src/Images/apple.png', clicked:false, able: true},
+  {id:1, idImage: 2, image:'../src/Images/pear.png', clicked:false, able: true},
+  {id:2, idImage: 3, image:'../src/Images/orange.png', clicked:false, able: true},
+  {id:3, idImage: 4, image:'../src/Images/peach.png', clicked:false, able: true},
+  {id:4, idImage: 5, image:'../src/Images/strawberry.png', clicked:false, able: true},
+  {id:5, idImage: 6, image:'../src/Images/banana.png', clicked:false, able: true},
+  {id:6, idImage: 7, image:'../src/Images/rasberry.png', clicked:false, able: true},
+  {id:7, idImage: 8, image:'../src/Images/blackberry.png', clicked:false, able: true},
+  {id:8, idImage: 1, image:'../src/Images/apple.png', clicked:false, able: true},
+  {id:9, idImage: 2, image:'../src/Images/pear.png', clicked:false, able: true},
+  {id:10, idImage: 3, image:'../src/Images/orange.png', clicked:false, able: true},
+  {id:11, idImage: 4, image:'../src/Images/peach.png', clicked:false, able: true},
+  {id:12, idImage: 5, image:'../src/Images/strawberry.png', clicked:false, able: true},
+  {id:13, idImage: 6, image:'../src/Images/banana.png', clicked:false, able: true},
+  {id:14, idImage: 7, image:'../src/Images/rasberry.png', clicked:false, able: true},
+  {id:15, idImage: 8, image:'../src/Images/blackberry.png', clicked:false, able: true},
 ]
 
 const FooterVersion = 'Ver. 2.1.37'
