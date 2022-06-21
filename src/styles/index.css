@@ -3,4 +3,13 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+.root {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=index.css.map */

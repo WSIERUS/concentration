@@ -17,7 +17,7 @@ const InstructionRender = () => {
   )
 
   Instruction.appendChild(
-    new Button('Rozumiem!', null, 'instruction-button', () => handleRouteToGame(), 'instruction-button-moved').handleRender
+    new Button('I understand!', null, 'instruction-button', () => handleRouteToGame(), 'instruction-button-moved').handleRender
   )
 
   return Instruction

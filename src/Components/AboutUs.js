@@ -7,7 +7,7 @@ const AboutUsRender = () => {
   )
 
   AboutUs.appendChild(
-    new Button('Powrót', null, 'about-us-button', () => handleRouteToGame(), 'about-us-button-moved').handleRender
+    new Button('Back', null, 'about-us-button', () => handleRouteToGame(), 'about-us-button-moved').handleRender
   )
 
   return AboutUs

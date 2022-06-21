@@ -129,20 +129,66 @@
   -ms-flex-item-align: right;
       align-self: right;
   position: absolute;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
+}
+
+@-webkit-keyframes animation {
+  0% {
+    -webkit-transform: translateX(calc( 100vw - 6cm));
+            transform: translateX(calc( 100vw - 6cm));
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@keyframes animation {
+  0% {
+    -webkit-transform: translateX(calc( 100vw - 6cm));
+            transform: translateX(calc( 100vw - 6cm));
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@-webkit-keyframes animation-reverse {
+  0% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  100% {
+    -webkit-transform: translateX(calc( 100vw - 6cm));
+            transform: translateX(calc( 100vw - 6cm));
+  }
+}
+
+@keyframes animation-reverse {
+  0% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  100% {
+    -webkit-transform: translateX(calc( 100vw - 6cm));
+            transform: translateX(calc( 100vw - 6cm));
+  }
 }
 
 .header-navibar {
+  -webkit-animation-name: animation;
+          animation-name: animation;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-transform: translateX(100vw);
           transform: translateX(100vw);
 }
 
 .header-navibar.open {
+  -webkit-animation-name: animation-reverse;
+          animation-name: animation-reverse;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-transform: translateX(calc( 100vw - 6cm));
           transform: translateX(calc( 100vw - 6cm));
 }
