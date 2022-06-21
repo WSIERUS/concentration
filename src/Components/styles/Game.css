@@ -180,7 +180,7 @@
   }
 }
 
-@media (max-width: 7.5cm) {
+@media (max-width: 8.5cm) {
   .counter-div {
     margin: 6px 0 6px 0;
     width: 5cm;
@@ -196,8 +196,8 @@
   }
   .game-card, .game-card-moved {
     margin: 5px;
-    width: 1.2cm;
-    height: 1.8cm;
+    width: 1.0cm;
+    height: 1.5cm;
   }
   .congrats-description {
     margin: 0 0 0.4cm 0;
