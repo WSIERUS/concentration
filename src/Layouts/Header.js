@@ -45,12 +45,13 @@ const NaviBarRender = () => { // Rendering NaviBar in right side Header
   NaviBar.className = 'header-navibar'
 
   for(let i = 0; i <= 2; i++) { // Buttons rendering by FOR loop
-    const NaviElement = document.createElement('div')
-    NaviElement.className = 'header-navibar-element'
-    NaviElement.addEventListener('click', naviBarElementsArray[i].action)
-    NaviElement.textContent = naviBarElementsArray[i].name
-    NaviBar.appendChild(NaviElement)
+  
+    NaviBar.appendChild(
+      new Button(naviBarElementsArray[i].name, null, 'header-navibar-element', naviBarElementsArray[i].action, 'header-navibar-element-moved').handleRender
+    )
+    
   }
+
   return NaviBar
 }
 
