@@ -111,3 +111,19 @@
 //     background-color: rgba(0, 0, 0, 0)
 //     font-size: 0
 //     cursor: default
+
+%Navi-Bar
+  width: 200px
+  background-color: white
+  display: flex
+  flex-direction: column
+  align-items: center
+  position: absolute
+
+.header-navibar
+  @extend %Navi-Bar
+  transform: translateX(-300px)
+
+.header-navibar.open
+  @extend %Navi-Bar
+  transform: translateX(0px)

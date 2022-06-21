@@ -6,8 +6,10 @@ function handleRouteToGame() { // Route to Game Aplication
   setTimeout(() => {
     root.textContent = ''
     root.appendChild(HeaderRedner())
+    root.appendChild(NaviBarRender())
     root.appendChild(MainRender())
     root.appendChild(FooterRender())
+    ActuallyStateNaviBar()
     updateCounters()
   }, 500)
 }
